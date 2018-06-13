@@ -44,7 +44,7 @@ public class MongoDBConnection {
     @PostConstruct
     public void initConnection() {
   // added "mongodb" as first entry in next line for preference
-        String mongoHost = env.getProperty("127.0.0.1", "mongodb.server.host"); // env var MONGODB_SERVER_HOST takes precedence
+        String mongoHost = env.getProperty("mongodb.server.host", "127.0.0.1"); // env var MONGODB_SERVER_HOST takes precedence
         String mongoPort = env.getProperty("mongodb.server.port", "27017"); // env var MONGODB_SERVER_PORT takes precedence
         String mongoUri = env.getProperty("uri", "");
         String mongoUser = env.getProperty("mongodb.user", "mongodb"); // env var MONGODB_USER takes precedence
